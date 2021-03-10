@@ -3,6 +3,7 @@ const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
 const path = require('path');
+const cors = require('cors');
 
 const Sockets = require('./sockets');
 
@@ -17,7 +18,7 @@ class Server {
 		// Configuraciones de sockets
 		this.io = socketio(this.server, {
 			cors: {
-				origin: '*',
+				origin: 'https://mapa-location.herokuapp.com',
 				methods: ['GET', 'POST'],
 				credentials: true,
 			},

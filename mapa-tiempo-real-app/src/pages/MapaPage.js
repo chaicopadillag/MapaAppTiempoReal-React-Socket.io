@@ -3,8 +3,8 @@ import { SocketContext } from '../context/SocketContext';
 import useMapBox from '../hooks/useMapBox';
 
 const puntoInicial = {
-	lng: -76.9861,
-	lat: -11.9576,
+	lng: -77.0058,
+	lat: -12.0058,
 	zoom: 14.7279,
 };
 

@@ -1,7 +1,10 @@
-import mapboxgl from 'mapbox-gl';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Subject } from 'rxjs';
+import mapboxgl from 'mapbox-gl';
+
+//eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhaWNvcGFkaWxsYWciLCJhIjoiY2tseTU1N3pqMDBvNDJubzlsZm1jOWplcCJ9.luBsL5lsc18_ItnotezsHg';
 
