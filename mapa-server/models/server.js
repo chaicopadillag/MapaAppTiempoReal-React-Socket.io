@@ -17,7 +17,7 @@ class Server {
 		// Configuraciones de sockets
 		this.io = socketio(this.server, {
 			cors: {
-				origin: 'http://localhost:3000',
+				origin: '*',
 				methods: ['GET', 'POST'],
 				credentials: true,
 			},
@@ -26,7 +26,11 @@ class Server {
 
 	middlewares() {
 		// Desplegar el directorio público
+		this.app.use(cors());
 		this.app.use(express.static(path.resolve(__dirname, '../public')));
+		this.app.get('*', (req, res) => {
+			res.sendFile(path.join(__dirname + '/../public/index.html'));
+		});
 	}
 
 	// Esta configuración se puede tener aquí o como propieda de clase
